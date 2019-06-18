@@ -19,11 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group([
 	'middleware' => ['api', 'cors'],
-]), function ($router) {
+], function ($router) {
 	// News
 	Route::get('news', 'NewsController@index');
 	Route::get('news/edit/{id}', 'NewsController@edit');
 	Route::post('news', 'NewsController@store');
 	Route::post('news/{id}', 'NewsController@update');
 	Route::get('news/{id}', 'NewsController@destroy');	
-}
+});
