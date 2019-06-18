@@ -3,26 +3,73 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\News;
 
 class NewsController extends Controller
 {
+	public $data = [];
+
     public function index()
     {
-    	# code...
+    	$news = News::all();
+    	foreach($news as $value) {
+    		$this->data[] = [
+                'id' => $value->id,
+    			'author' => $value->author,
+    			'title' => $value->title,
+    			'description' => $value->description,
+    			'image' => $value->image,
+    			'content' => $value->content,
+    			'category_id' => $value->Category->category_id,
+    		];
+    	}
+
+        $dataJSON = ['articles'=>$this->data];
+    	return response()->json($dataJSON, 200);
+    }
+
+    public function edit($id)
+    {
+    	$news = News::findOrFail($id);
+
+    	return response()->json($news, 200);
     }
 
     public function store(Request $request)
     {
-    	# code...
+    	$news = new News;
+        $news->author = $request->author;
+        $news->title = $request->title;
+        $news->description = $request->description;
+        $news->image = $request->image;
+        $news->content = $request->content;
+        $news->category_id = $request->category_id;
+
+        $news->save();
+
+    	return response()->json($news, 201);
     }
 
     public function update(Request $request, $id)
     {
-    	# code...
+    	$news = News::findOrFail($id);
+        $news->author = $request->author;
+        $news->title = $request->title;
+        $news->description = $request->description;
+        $news->image = $request->image;
+        $news->content = $request->content;
+        $news->category_id = $request->category_id;
+
+        $news->save();
+
+    	return response()->json($news, 200);
     }
 
     public function destroy($id)
     {
-    	# code...
+    	$news = News::findOrFail($id);
+    	$news->delete();
+
+    	return response()->json($news, 204);
     }
 }
