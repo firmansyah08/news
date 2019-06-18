@@ -16,3 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group([
+	'middleware' => ['api', 'cors'],
+]), function ($router) {
+	// News
+	Route::get('news', 'NewsController@index');
+	Route::get('news/edit/{id}', 'NewsController@edit');
+	Route::post('news', 'NewsController@store');
+	Route::post('news/{id}', 'NewsController@update');
+	Route::get('news/{id}', 'NewsController@destroy');	
+}
