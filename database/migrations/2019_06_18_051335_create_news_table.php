@@ -20,6 +20,7 @@ class CreateNewsTable extends Migration
             $table->text('description');
             $table->string('image');
             $table->text('content');
+            $table->boolean('status');
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     public $timestamps = true;
-    protected $fillable = ['author', 'title', 'description', 'image', 'content'];
+    protected $fillable = ['author', 'title', 'description', 'image', 'content', 'status'];
 
     public function Category()
     {

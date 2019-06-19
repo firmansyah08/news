@@ -20,11 +20,12 @@ class NewsController extends Controller
     			'description' => $value->description,
     			'image' => $value->image,
     			'content' => $value->content,
-    			'category_id' => $value->Category->category,
+    			'category_id' => $value->Category->name,
+                'status' => $value->status,
     		];
     	}
 
-        $dataJSON = ['articles'=>$this->data];
+        $dataJSON = ['data'=>$this->data];
     	return response()->json($dataJSON, 200);
     }
 
@@ -44,6 +45,7 @@ class NewsController extends Controller
         $news->image = $request->image;
         $news->content = $request->content;
         $news->category_id = $request->category_id;
+        $news->status = 0;
 
         $news->save();
 
@@ -59,6 +61,11 @@ class NewsController extends Controller
         $news->image = $request->image;
         $news->content = $request->content;
         $news->category_id = $request->category_id;
+        if ($news->status == 0) {
+            $news->status = 0;
+        } else {
+            $news->status = 1;
+        }
 
         $news->save();
 
@@ -71,5 +78,18 @@ class NewsController extends Controller
     	$news->delete();
 
     	return response()->json($news, 204);
+    }
+
+    public function publish($id)
+    {
+        $news = News::findOrFail($id);
+
+        if ($news->status == 0) {
+            $news->status = 1;
+        }
+
+        $news->save();
+
+        return response()->json($news, 200);
     }
 }
