@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form enctype="multipart/form-data" class="myFormEdit">
+                        <form enctype="multipart/form-data" class="myFormEditCategory">
                             @csrf
                             <input type="hidden" name="id" id="id">
                             <div class="form-group">

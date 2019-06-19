@@ -59,8 +59,8 @@
         }
     });
   }
-  $('.myFormEdit').submit(function(e){
-      var formData    = new FormData($('.myFormEdit')[0]);
+  $('.myFormEditCategory').submit(function(e){
+      var formData    = new FormData($('.myFormEditCategory')[0]);
       var id = formData.get('id');
       e.preventDefault();
       $.ajax({
@@ -78,7 +78,7 @@
               $('#TableCategory').DataTable().ajax.reload();
           },
           complete: function() {
-              $('.myFormEdit')[0].reset();
+              $('.myFormEditCategory')[0].reset();
           }
       });
   });
