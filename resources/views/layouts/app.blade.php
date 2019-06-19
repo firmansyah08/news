@@ -10,8 +10,9 @@
     <link href="{{ asset('backend/css/font-awesome.min.css ') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/datepicker3.css ') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/styles.css ') }}" rel="stylesheet">
+    <link href="{{ asset('css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <link href="{{ asset('datatable/jquery.dataTables.min.css ') }}" rel="stylesheet">
-    <link href="{{ asset('selectize/select2.min.css')}}" rel="stylesheet" />
+    {{-- <link href="{{ asset('selectize/select2.min.css')}}" rel="stylesheet" /> --}}
     <link rel="icon" type="icon" href="{{ asset('icon/home.png')}}">
 
     
@@ -28,10 +29,11 @@
 @include('partials.navbar')
 @include('partials.sidebar')
     <main class="py-4">
-            @yield('content')
-        </main>
+        @yield('content')
+    </main>
 
-    <script src="{{ asset('backend/js/jquery-1.11.1.min.js ') }}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    {{-- <script src="{{ asset('backend/js/jquery-1.11.1.min.js ') }}"></script> --}}
     <script src="{{ asset('backend/js/bootstrap.min.js ') }}"></script>
     <script src="{{ asset('backend/js/chart.min.js ') }}"></script>
     <script src="{{ asset('backend/js/chart-data.js ') }}"></script>
@@ -39,26 +41,26 @@
     <script src="{{ asset('backend/js/easypiechart-data.js ') }}"></script>
     <script src="{{ asset('backend/js/bootstrap-datepicker.js ') }}"></script>
     <script src="{{ asset('backend/js/custom.js ') }}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('datatable/jquery.dataTables.min.js ') }}"></script>
-    <script src="{{ asset('selectize/select2.min.js')}}"></script>
+    {{-- <script src="{{ asset('selectize/select2.min.js')}}"></script> --}}
+    <script src="{{ asset('assets/backEnd/global.js') }}"></script>
     <script type="text/javascript" src="{{ asset('backend/js/ckeditor/ckeditor.js')}}"></script>
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $(document).ready(function() {
-                $('#datatables').DataTable({
-                        
-                });
+            $('#datatables').DataTable({
+                    
             });
-    </script>
+        });
+    </script> --}}
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $(document).ready(function(){
             $('#id').select2({
                 maximumInputLength: 10
 
             });
         });
- 
- 
     </script>
 
     <script type="text/javascript">
@@ -68,31 +70,38 @@
 
             });
         });
- 
- 
-    </script>
+    </script> --}}
 
     <script type="text/javascript">
 
 
-    $(document).ready(function() {
+        $(document).ready(function() {
 
-      $(".btn-success").click(function(){ 
-          var html = $(".clone").html();
-          $(".increment").after(html);
-      });
+          $(".btn-success").click(function(){ 
+              var html = $(".clone").html();
+              $(".increment").after(html);
+          });
 
-      $("body").on("click",".btn-danger",function(){ 
-          $(this).parents(".control-group").remove();
-      });
+          $("body").on("click",".btn-danger",function(){ 
+              $(this).parents(".control-group").remove();
+          });
 
-    });
+        });
 
-</script>
+    </script>
+
+    {{-- <script>
+            CKEDITOR.replace( 'content' );
+    </script> --}}
 
     <script>
-            CKEDITOR.replace( 'content' );
+        var baseUrl = 'http://localhost:8000/api/';
+        var imageUrl = 'http://localhost:8000/assets/images';
     </script>
+
+    @yield('scripts')
+
+    @include('layouts.appJsNews')
     
 </body>
 </html>
