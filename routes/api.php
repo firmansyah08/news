@@ -17,6 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group([
 	'middleware' => ['api', 'cors'],
 ], function ($router) {
+	// Auth
+	Route::post('register', 'AuthController@register');
+	Route::post('login', 'AuthController@login');
+	Route::post('logout', 'AuthController@logout');
+
 	// Category
 	Route::get('category', 'CategoryController@index');
 	Route::get('category/edit/{id}', 'CategoryController@edit');
