@@ -35,5 +35,6 @@ Route::group([
 	Route::get('news/edit/{id}', 'NewsController@edit');
 	Route::post('news', 'NewsController@store');
 	Route::post('news/{id}', 'NewsController@update');
+	Route::post('news/publish/{id}', 'NewsController@publish');
 	Route::delete('news/{id}', 'NewsController@destroy');
 });
