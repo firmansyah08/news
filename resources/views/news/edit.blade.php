@@ -13,6 +13,7 @@
                         <form enctype="multipart/form-data" class="myFormEdit">
                             @csrf
                             <input type="hidden" name="id" id="id">
+                            <input type="hidden" name="author" id="author">
                             <input type="hidden" name="category_id" id="category_id">
                             @include('news.form')
                     </div>

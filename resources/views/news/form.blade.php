@@ -1,9 +1,4 @@
 <div class="form-group">
-    <label class="control-label mb-1">Author</label>
-    <input id="author" name="author" type="text" class="form-control" aria-required="true" aria-invalid="false">
-</div>
-
-<div class="form-group">
     <label class="control-label mb-1">Title</label>
     <input id="title" name="title" type="text" class="form-control" aria-required="true" aria-invalid="false">
 </div>

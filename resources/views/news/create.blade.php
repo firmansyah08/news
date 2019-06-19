@@ -12,6 +12,13 @@
                     <div class="col-lg-12">
                         <form enctype="multipart/form-data" id="createData">
                             @csrf
+                            <input type="text" name="author" value="{{ Auth::user()->id }}">
+
+                            <div class="form-group">
+                                <label class="control-label mb-1">Author</label>
+                                <input id="author" name="author" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                            </div>
+
                             @include('news.form')
 
                             <div class="form-group">
