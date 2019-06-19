@@ -102,6 +102,7 @@
     @yield('scripts')
 
     @include('layouts.appJsNews')
+    @include('layouts.appJsCategory')
     
 </body>
 </html>

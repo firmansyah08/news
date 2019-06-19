@@ -8,6 +8,12 @@ $(document).ready(function(){
         $('#indexCategory').attr('hidden', false);
 	});
 
+    //Modal Category
+    $('#changeViewCategory').on('click',function() {
+        // $('.news').hide();
+        $('#categoryModal').modal('show');
+    });
+
 	// Modal News
 	$('#changeViewNews').on('click',function() {
         // $('.news').hide();

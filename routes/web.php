@@ -15,8 +15,8 @@ Route::get('/', 'FrontendController@index');
 Route::get('/news/details/{id}', 'FrontendController@detail')->name('detail');
 
 // Category
-Route::get('/kategori', function() {
-	return view('kategori.index');
+Route::get('/category', function() {
+	return view('category.index');
 });
 
 // News

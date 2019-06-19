@@ -2,7 +2,6 @@
   function NewsEdit(id)
   {
     console.log(id);
-
     // $('.news').hide();
     $('#newsEditModal').modal('show');
     // $('.NewsEdit').attr('hidden',false);
@@ -29,7 +28,6 @@
         }
     });
   }
-
   $('.myFormEdit').submit(function(e){
       var formData    = new FormData($('.myFormEdit')[0]);
       var id = formData.get('id');
@@ -59,7 +57,6 @@
   function NewsPublish(id)
   {
     console.log(id);
-
     // $('.news').hide();
     $('#newsPublishModal').modal('show');
     // $('.NewsEdit').attr('hidden',false);
@@ -86,7 +83,6 @@
         }
     });
   }
-
   $('.myFormPublish').submit(function(e){
       var formData    = new FormData($('.myFormPublish')[0]);
       var id = formData.get('id');
@@ -142,7 +138,6 @@
           }
           });
         } else {
-
         }
       });
   }
