@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\News;
 
 class CategoryController extends Controller
 {
@@ -27,9 +28,11 @@ class CategoryController extends Controller
     }
 
     
-    public function create()
+    public function showNews($id)
     {
-        //
+        $category = News::where('category_id', $id)->get();
+
+        return response()->json($category, 200);
     }
 
     
