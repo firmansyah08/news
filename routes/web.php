@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/category', function() {
-		return view('kategori.index');
-	});
+// Category
+Route::get('/kategori', function() {
+	return view('kategori.index');
+});
+
+// News
+Route::get('/news', function() {
+	return view('news.index');
+});
