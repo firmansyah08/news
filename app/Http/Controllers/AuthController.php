@@ -12,7 +12,7 @@ class AuthController extends Controller
         $user = User::create([
         	'name'     => $request->name,
             'email'    => $request->email,
-            'password' => $request->password,
+            'password' =>  $request->password,
          ]);
 
         $token = auth()->login($user);
