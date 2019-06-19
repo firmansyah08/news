@@ -20,14 +20,15 @@ Route::group([
 	// Category
 	Route::get('category', 'CategoryController@index');
 	Route::get('category/edit/{id}', 'CategoryController@edit');
+	Route::get('category/{id}', 'CategoryController@showNews');
 	Route::post('category', 'CategoryController@store');
 	Route::post('category/{id}', 'CategoryController@update');
-	Route::get('category/{id}', 'CategoryController@destroy');
+	Route::delete('category/{id}', 'CategoryController@destroy');
+
 	// News
 	Route::get('news', 'NewsController@index');
 	Route::get('news/edit/{id}', 'NewsController@edit');
 	Route::post('news', 'NewsController@store');
 	Route::post('news/{id}', 'NewsController@update');
-	Route::get('news/{id}', 'NewsController@destroy');
-		
+	Route::delete('news/{id}', 'NewsController@destroy');
 });
