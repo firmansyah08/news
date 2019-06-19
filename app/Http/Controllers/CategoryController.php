@@ -18,11 +18,11 @@ class CategoryController extends Controller
         foreach($category as $value) {
             $this->data[] = [
                 'id' => $value->id,
-                'category' => $value->category,
+                'name' => $value->name,
             ];
         }
 
-        $dataJSON = ['category'=>$this->data];
+        $dataJSON = ['data'=>$this->data];
         return response()->json($dataJSON, 200);
 
     }
@@ -40,7 +40,7 @@ class CategoryController extends Controller
     {
         //
         $category = new Category;
-        $category->category = $request->category;
+        $category->name = $request->name;
         $category->save();
 
         return response()->json($category, 201);
@@ -58,7 +58,7 @@ class CategoryController extends Controller
     {
         //
         $category = Category::findOrFail($id);
-        $category->category = $request->category;
+        $category->name = $request->name;
 
         $category->save();
 
