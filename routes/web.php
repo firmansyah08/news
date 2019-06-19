@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontendController@index');
+Route::get('/news/details/{id}', 'FrontendController@detail')->name('detail');
 
 // Category
 Route::get('/kategori', function() {
