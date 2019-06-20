@@ -12,15 +12,21 @@ $(document).ready(function(){
         { data: "id" },
         { data: "author" },
         { data: "title" },
-        { data: "description" },
         { data: "image",
           "render" : function ( url, type, full) {
           return '<img height="50" width="50" src="'+url+'"/>';
           }
         },
-        { data: "content" },
         { data: "category_id" },
-        { data: "status" },
+        { data: "status", 
+        "render" : function ( id, row, data, type) {
+          if (data.status == 0) {
+            return '<button type="submit" class="btn btn-danger">Unpublish</button>'
+          }
+          
+        
+          } 
+         },
         { data: "id", 
           "render" : function ( id, row, data, type ) {
             if (data.status == 0) {
@@ -31,7 +37,7 @@ $(document).ready(function(){
                        '<ul class="dropdown-menu">'+
                           '<li><a onclick="NewsPublish('+id+')" id="NewsPublish">Publish</a></li>'+
                           '<li><a onclick="NewsEdit('+id+')" id="NewsEdit">Edit</a></li>'+
-                          '<li><a onclick="NewsDelete('+id+')" id="NewsDelete">Hapus</a></li>'+
+                          '<li><a onclick="NewsDelete('+id+')" id="NewsDelete">Delete</a></li>'+
                        '</ul>'+
                      '</div>'
             } else {
@@ -41,7 +47,7 @@ $(document).ready(function(){
                        '</button>'+
                        '<ul class="dropdown-menu">'+
                           '<li><a onclick="NewsEdit('+id+')" id="NewsEdit">Edit</a></li>'+
-                          '<li><a onclick="NewsDelete('+id+')" id="NewsDelete">Hapus</a></li>'+
+                          '<li><a onclick="NewsDelete('+id+')" id="NewsDelete">Delete</a></li>'+
                        '</ul>'+
                      '</div>'
             }
@@ -59,7 +65,7 @@ $(document).ready(function(){
       // console.log(); 
     $.each(data.data, function(index, value) {
       $('#selectCategory').append(
-        '<option value="'+value.id+'">'+value.name+'</option>'
+        '<option value="'+value.id+'">'+value.category+'</option>'
       );
     })
   });

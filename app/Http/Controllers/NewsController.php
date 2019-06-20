@@ -20,7 +20,7 @@ class NewsController extends Controller
     			'description' => $value->description,
     			'image' => $value->image,
     			'content' => $value->content,
-    			'category_id' => $value->Category->name,
+    			'category_id' => $value->Category->category,
                 'status' => $value->status,
     		];
     	}

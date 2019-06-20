@@ -25,9 +25,7 @@
                                 <th>No</th>
                                 <th>Author</th>
                                 <th>Title</th>
-                                <th>Description</th>
                                 <th>Image</th>
-                                <th>Content</th>
                                 <th>Category</th>
                                 <th>Status</th>
                                 <th>Action</th>

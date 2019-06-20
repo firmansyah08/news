@@ -12,13 +12,9 @@
                     <div class="col-lg-12">
                         <form enctype="multipart/form-data" id="createData">
                             @csrf
-                            <input type="text" name="author" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="author" value="Admin">
 
-                            <div class="form-group">
-                                <label class="control-label mb-1">Author</label>
-                                <input id="author" name="author" type="text" class="form-control" aria-required="true" aria-invalid="false">
-                            </div>
-
+                            
                             @include('news.form')
 
                             <div class="form-group">
@@ -30,10 +26,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash"></i> Batal</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>
                 <button type="submit" class="btn btn-primary"> 
                     <i class="fa fa-check"></i>
-                    Simpan
+                    Save
                 </button>
                     </form>
             </div>

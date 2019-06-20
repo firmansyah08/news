@@ -38,10 +38,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash"></i> Batal</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>
                 <button type="submit" class="btn btn-primary"> 
                     <i class="fa fa-check"></i>
-                    Simpan
+                    Save
                 </button>
                     </form>
             </div>

@@ -19,7 +19,7 @@ $(document).ready(function(){
                        '</button>'+
                        '<ul class="dropdown-menu">'+
                           '<li><a onclick="CategoryEdit('+id+')" id="CategoryEdit">Edit</a></li>'+
-                          '<li><a onclick="CategoryDelete('+id+')" id="CategoryDelete">Hapus</a></li>'+
+                          '<li><a onclick="CategoryDelete('+id+')" id="CategoryDelete">Delete</a></li>'+
                        '</ul>'+
                      '</div>'
             
