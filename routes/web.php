@@ -23,3 +23,7 @@ Route::get('/category', function() {
 Route::get('/news', function() {
 	return view('news.index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
