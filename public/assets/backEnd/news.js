@@ -21,10 +21,10 @@ $(document).ready(function(){
         { data: "status", 
         "render" : function ( id, row, data, type) {
           if (data.status == 0) {
-            return '<button type="submit" class="btn btn-danger">Unpublish</button>'
-          }
-          
-        
+            return '<button class="btn btn-danger" disabled="disabled">Unpublish</button>'
+          } else {
+            return '<button class="btn btn-success" disabled="disabled">Publish</button>'
+          }        
           } 
          },
         { data: "id", 
